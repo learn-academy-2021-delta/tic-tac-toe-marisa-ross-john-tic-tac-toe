@@ -6,20 +6,32 @@ class App extends Component{
   constructor(props){
     super(props)
     this.state = {
-      squares: [null, null, null, null, null, null, null, null, null],
+      squares: ['', '', '', '', '', '', '', '', ''],
       xLocation: null,
-      oLocation: null
+      oLocation: null,
+      clickCounter: 0,
     }
   }
 
-  //
-
-
 
   handleGamePlay = (index) => {
-    const {squares, xLocation, oLocation} = this.state
-    squares[index] = "👻"
-    this.setState({squares: squares})
+    const {squares, xLocation, oLocation, clickCounter} = this.state
+  
+    //let addClick = clickCounter
+    
+    console.log(addClick);
+    for(index = 0; index<squares.length; index++){
+      let addClick = clickCounter++
+      if(addClick %2 === 0){
+        return squares[index] = "🎃"
+        this.setState({squares: squares, clickCounter: clickCounter})
+      } else{
+        squares[index] = "👻"
+        this.setState({squares: squares, clickCounter: clickCounter})
+      }
+
+    }
+   
 
   }
 
