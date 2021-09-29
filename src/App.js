@@ -7,24 +7,51 @@ class App extends Component {
     super(props)
     this.state = {
       squares: ["", "", "", "", "", "", "", "", ""],
-      xLocation: null,
-      oLocation: null,
+      // xClick: [1,3,5,7,9],
+      // oClick: [2,4,6,8],
+      possibleClicks: [1,2,3,4,5,6,7,8,9],
+      clickCounter: []
+      // click1: 1,
+      // click2: 2, 
+      // click3: 3, 
+      // click4: 4, 
+      // click5: 5, 
+      // click6: 6, 
+      // click7: 7, 
+      // click8: 8, 
+      // click9: 9, 
       // clickCounter: 0,
     }
   }
 
-  componentDidMount() {
-    let treasure = Math.floor(Math.random() * this.state.squares.length)
-    let bomb = Math.floor(Math.random() * this.state.squares.length)
-    this.setState({ xLocation: treasure, oLocation: bomb })
-  }
+//  componentDidMount() {
+//    const clickCounter = 0
+// }
 
   handleGamePlay = (index) => {
+    const squares = this.state.squares 
+
     // destructuring
-    const { squares, xLocation, oLocation } = this.state
-    if (xLocation === index) {
-      squares[index] = "👻"
-    }
+  
+    
+    // const { squares, xLocation, oLocation, } = this.state
+    
+    //clickCounter += 1
+    
+    // squares[0] = "👻"
+    // squares[1] = "🎃"
+    // this.setState({squares: squares})
+    
+  // xO = () => {
+  //   if (clickCounter % 2 === 0) {
+  //     squares[index] = "🎃"
+  //   } else {
+  //     squares[index] = "👻"
+  //   }
+  //   this.setState({square: squares})
+  // }
+
+
     // let myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     // const oddEven = (array) => {
     //   return array.map((value) => {
@@ -62,7 +89,7 @@ class App extends Component {
     //     this.setState({ squares: squares, clickCounter: clickCounter })
     //   }
     // }
-  }
+  //}
 
   render() {
     return (
